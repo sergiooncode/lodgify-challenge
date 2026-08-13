@@ -1,0 +1,25 @@
+[project]
+name = "lodgify-challenge"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sergio", email = "sperez4mba@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.121.0",
+    "inspect-ai>=0.3.258",
+]
+
+[project.scripts]
+lodgify-challenge = "lodgify_challenge:main"
+
+[build-system]
+requires = ["uv_build>=0.10.10,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
