@@ -10,5 +10,9 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .ipynb_checkpoints/
+.coverage
+htmlcov/
+mutants/
+.mutmut-cache
 
 .DS_Store
