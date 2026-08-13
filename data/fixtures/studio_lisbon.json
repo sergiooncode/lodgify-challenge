@@ -1,0 +1,44 @@
+{
+  "property_id": 7218,
+  "property_name": "Estúdio Graça",
+  "property_type": "NormalApartment",
+  "description": {
+    "name": "Estúdio Graça",
+    "headline": "Compact studio with a balcony",
+    "description": "<p>A studio for two with a small balcony. The bed is a sofa bed. Tiled floors throughout.</p>"
+  },
+  "amenities": [
+    "InternetBroadband",
+    "AirConditioning",
+    "KitchenAndDining"
+  ],
+  "image_urls": [
+    "https://example.invalid/img/7218/studio.jpg"
+  ],
+  "reviews": [
+    "Small but well organised. The sofa bed is firmer than we expected, in a good way.",
+    "Tram stop is close and the balcony gets afternoon sun."
+  ],
+  "num_of_reviews": 12,
+  "average_review_score": 4.33,
+  "rental_info": {
+    "max_guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1
+  },
+  "location": {
+    "city": "Lisbon",
+    "country": "Portugal",
+    "latitude": 38.7188,
+    "longitude": -9.1288
+  },
+  "policies": {
+    "cancellation_policy": "Non-refundable.",
+    "payment_schedule": "Full payment at booking.",
+    "damage_deposit": "150 EUR, refundable within 7 days of checkout."
+  },
+  "house_rules": {
+    "check_in_time": "4 PM",
+    "check_out_time": "11 AM"
+  }
+}
