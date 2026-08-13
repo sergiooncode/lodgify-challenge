@@ -20,6 +20,18 @@ Budget: 3–4 focused hours.
 the 90-minute mark, stop building scaffolding — cut to three fixtures and move
 on. Nothing in Phase 0–1 gets built ahead of what Phase 2's single slice needs.
 
+**API budget: not the binding constraint.** Modelled in `cost.py` against
+measured fixture sizes (mean 536 tokens). On Sonnet 5, four fixtures through
+generate → extract → verify costs ~$0.15 for one epoch; the full Phase 6 sweep of
+two versions at five epochs is ~$1.53 batched or ~$2.88 verifying each claim
+separately. Allowing for the dozen-plus re-runs that development actually takes,
+the whole project lands around $3–8. Opus would be ~1.7× that and still small.
+
+So the model choice is a quality decision, not a budget one, and epochs are
+affordable. What actually constrains the run is wall-clock time and rate limits.
+The token sizes behind these figures are assumptions apart from the property
+itself — re-derive them from the first real log rather than trusting them.
+
 ---
 
 ## Phase 0 — Spike: prove the Inspect replay path (do this first, ~20 min)
@@ -27,14 +39,27 @@ on. Nothing in Phase 0–1 gets built ahead of what Phase 2's single slice needs
 The riskiest unknown is the brief's "reproducible with no API calls" requirement.
 Settle it before building anything real.
 
-- [ ] `uv init` (Python 3.13), add `inspect-ai` + `anthropic`
-- [ ] Trivial Task: one hand-written Sample, `generate()` solver, `includes()`
-      scorer. Run it once against the real model to produce a `.eval` log
-- [ ] Confirm how a committed `.eval` log is re-read with **no API call**
-      (`inspect view`, and the log/dataframe API in the notebook). Write the
-      exact reproduction command into the README stub
-- [ ] Confirm Inspect's model-output cache behaviour and how epochs record
-      per-sample results
+- [x] `uv init` (Python 3.13), add `inspect-ai` + `anthropic`
+- [x] Trivial Task: one hand-written Sample, `generate()` solver, `includes()`
+      scorer. Run it once against the real model to produce a `.eval` log.
+      `replay_probe` in `tasks.py`; mechanism proved first against `mockllm`
+      (that log deleted, never committed) and then for real on Sonnet 5
+- [x] Confirm how a committed `.eval` log is re-read with **no API call**.
+      `list_eval_logs` + `read_eval_log` return task, model, status, scores and
+      sample output with the key unset. `.eval` is a zip archive, not text
+- [x] Epochs: `config.epochs` is recorded and every sample carries its own
+      `epoch` field, so per-sample results are already separable
+- [ ] Cache: `input_tokens_cache_write` / `input_tokens_cache_read` are in the
+      log but were 0 — caching is **opt-in**, not automatic. Phase 4's "re-run
+      hits the cache, no second API call" needs `generate(cache=True)` and is
+      still unproven
+- [ ] Ship logs from a **clean tree**. The log embeds `revision.commit`, and
+      this first one recorded `dirty: true`, so its commit does not identify the
+      code that produced it. Provenance is the point of committing logs at all
+- [ ] The `inspect eval` CLI does its own `.env` lookup and does not see
+      `.env.local` — it failed with "No ANTHROPIC_API_KEY defined". Real runs go
+      through `load_settings().export()`; document that, or add a thin entry
+      point, before anyone else tries the bare CLI
 
 **Acceptance:** a notebook cell reads a committed `.eval` log and shows results
 with `ANTHROPIC_API_KEY` **unset** — no raise, no network. That is the reviewer's
@@ -124,6 +149,11 @@ that needs a key is written wrong (AGENTS §4).
 ## Phase 4 — Grounding scorer (headline metric)
 
 - [ ] Claim extraction from generated copy → atomic claims
+- [ ] Decide the verify shape up front: one call per claim, or all claims in one
+      batched call. Per-claim is ~2× the cost and 15× the calls, so it is a
+      rate-limit and latency decision more than a money one. Batched is the
+      default; if per-claim measurably improves agreement in Phase 5, that is a
+      finding worth the spend — but it needs the calibration number to justify it
 - [ ] Verify each claim against the structured input: supported / contradicted /
       unsupported / review-sourced
 - [ ] Review-sourced = traceable only to a guest review. Reported as its own
