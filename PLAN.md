@@ -56,7 +56,7 @@ Settle it before building anything real.
 - [ ] Ship logs from a **clean tree**. The log embeds `revision.commit`, and
       this first one recorded `dirty: true`, so its commit does not identify the
       code that produced it. Provenance is the point of committing logs at all
-- [ ] The `inspect eval` CLI does its own `.env` lookup and does not see
+- [x] The `inspect eval` CLI does its own `.env` lookup and does not see
       `.env.local` — it failed with "No ANTHROPIC_API_KEY defined". Real runs go
       through `load_settings().export()`; document that, or add a thin entry
       point, before anyone else tries the bare CLI
@@ -164,7 +164,7 @@ README. Cache reuse remains unproven (see Phase 0).
 
 - [x] `TODO(human)`: 18 claims hand-labelled from the frozen Phase 2 run. Not
       agent-generated (AGENTS §5)
-- [ ] That run is `gen_v0`'s deliberately-bad output, and that is correct — you
+- [x] That run is `gen_v0`'s deliberately-bad output, and that is correct — you
       are calibrating the judge, not the generator. Obvious hallucinations are
       easier to label and make disagreement more diagnostic. Do not wait for a
       "good" run to label. Label v0 once and never re-label against a later run:
@@ -182,9 +182,9 @@ stays unmeasured.
 
 ## Phase 6 — Iterate v0 → v1 (→ v2 if time)
 
-- [ ] `gen_v1`: fix the dominant failure v0's scores exposed
-- [ ] Results table: metric per version with confidence intervals
-- [ ] Paired significance test — did it help, or is it noise?
+- [x] `gen_v1`: fix the dominant failure v0's scores exposed
+- [x] Results table: metric per version with confidence intervals
+- [x] Paired significance test — did it help, or is it noise?
 
 **Acceptance:** each version names the failure it targets; a change that didn't
 help stays in the table, reported honestly. If short on time, v1 only.
@@ -193,10 +193,11 @@ help stays in the table, reported honestly. If short on time, v1 only.
 
 ## Phase 7 — Adversarial + injection report
 
-- [ ] Scores broken out: adversarial slice vs realistic slice
-- [ ] Injection cases: does owner text steer the output? State the outcome even
+- [x] Scores broken out: adversarial slice vs realistic slice
+- [x] Injection cases: does owner text steer the output? State the outcome even
       if it fails
-- [ ] Any mitigation, and its cost
+- [ ] Any mitigation, and its cost — **not done.** No mitigation was built or
+      costed. The report states the vulnerability and its bound instead
 
 **Acceptance:** injection result stated explicitly. A reported vulnerability
 beats a silent one.
@@ -205,16 +206,16 @@ beats a silent one.
 
 ## Phase 8 — Notebook + README
 
-- [ ] `evals.ipynb` runs the pipeline top to bottom and reads the committed logs
-- [ ] README: approach, `uv sync` run steps, how to read the logs, how AI was used
-- [ ] Notebook narrative: assumptions/scope up top; each metric justified in
+- [x] `evals.ipynb` runs the pipeline top to bottom and reads the committed logs
+- [x] README: approach, `uv sync` run steps, how to read the logs, how AI was used
+- [x] Notebook narrative: assumptions/scope up top; each metric justified in
       customer terms; trade-offs + roads-not-taken at the end (JSONL-vs-DB is
       moot now — instead: why these metrics, why Inspect, what breaks at scale,
       online signal = owner edit-rate)
-- [ ] State plainly: if the generator emits JSON via tool use, the format scorer
+- [x] State plainly: if the generator emits JSON via tool use, the format scorer
       passes by construction. Keep it as a regression guard, but name
       constrained decoding — not prompt quality — as what passes it
-- [ ] "What I did not build and why": RAG, fine-tuning, agents, serving, and
+- [x] "What I did not build and why": RAG, fine-tuning, agents, serving, and
       `image_urls` (no vision — scoped out on the record, not silently dropped)
 
 **Acceptance:** a reviewer running `uv sync` reproduces results offline and, from

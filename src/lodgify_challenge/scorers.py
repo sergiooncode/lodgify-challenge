@@ -158,6 +158,7 @@ def grounding(judge: Judge | str | None = None) -> Scorer:
                 ],
                 "facts_total": result.facts_total,
                 "facts_covered": result.facts_covered,
+                "covered_indices": sorted(i for i in covered if 0 <= i < result.facts_total),
             },
         )
 

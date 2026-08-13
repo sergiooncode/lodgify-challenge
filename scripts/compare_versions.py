@@ -81,10 +81,9 @@ def main() -> None:
         print(
             f"{metric:32}{mean(a[s] for s in shared):>8.2f}"
             f"{mean(b[s] for s in shared):>8.2f}"
-            f"{mean(diffs):>+9.2f}{f'{better} up / {worse} down':>12}"
+            f"{mean(diffs):>+8.2f}  {spread:<7}"
+            f"{f'{better} up / {worse} down':>14}"
         )
-        if spread:
-            print(f"{'':32}{'':8}{'':8}{spread:>9}")
 
     print(f"\nProperties compared: {len(shared)}. Too few for a significance test —")
     print("the per-property direction is the honest summary, not a p-value.")

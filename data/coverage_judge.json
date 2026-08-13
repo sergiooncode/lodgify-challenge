@@ -1,0 +1,63 @@
+{
+  "0a4061c3922592df4031115fa4179661ab38bf71003f6a0ebf30514d36bad9c8": {
+    "property": "apartment_porto_sparse",
+    "version": "v0",
+    "facts_total": 6,
+    "covered_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408": {
+    "property": "villa_sitges",
+    "version": "v0",
+    "facts_total": 11,
+    "covered_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "cace0a965dfdad7b300a7827d863fc7a99ed12e817ccf85add2161272d33799d": {
+    "property": "apartment_porto_sparse",
+    "version": "v1",
+    "facts_total": 6,
+    "covered_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "ca6aadc6fa81dcaf0aa106766df04be7d937d34e447d36138db5c912b849dd09": {
+    "property": "villa_sitges",
+    "version": "v1",
+    "facts_total": 11,
+    "covered_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}

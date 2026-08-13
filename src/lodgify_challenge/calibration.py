@@ -21,6 +21,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections import Counter
+from collections.abc import Hashable, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -69,6 +70,38 @@ def load_labels(path: Path) -> list[LabelRecord]:
     return [r for r in (LabelRecord.parse(l) for l in path.read_text().splitlines()) if r]
 
 
+def raw_agreement(pairs: Sequence[tuple[Hashable, Hashable]]) -> float:
+    """Share of items where both raters chose the same label."""
+    if not pairs:
+        return 0.0
+    return sum(1 for a, b in pairs if a == b) / len(pairs)
+
+
+def cohens_kappa(pairs: Sequence[tuple[Hashable, Hashable]]) -> float:
+    """Agreement corrected for chance.
+
+    Raw agreement flatters a rater on a skewed distribution: if almost
+    everything is one label, always answering that label scores well while
+    measuring nothing. Kappa subtracts the agreement two random raters with
+    these marginals would reach anyway.
+
+    Returns 0.0 when chance agreement is already perfect — the degenerate case
+    where kappa is undefined rather than good.
+
+    Label-agnostic on purpose: the verdict labels and the binary coverage ticks
+    are different vocabularies but the same arithmetic.
+    """
+    if not pairs:
+        return 0.0
+    n = len(pairs)
+    first = Counter(a for a, _ in pairs)
+    second = Counter(b for _, b in pairs)
+    expected = sum(first[k] * second[k] for k in set(first) | set(second)) / (n**2)
+    if expected >= 1.0:
+        return 0.0
+    return (raw_agreement(pairs) - expected) / (1 - expected)
+
+
 @dataclass(frozen=True)
 class Agreement:
     """Judge verdicts against human labels, on the claims both cover."""
@@ -91,31 +124,11 @@ class Agreement:
 
     @property
     def raw(self) -> float:
-        """Share of claims where judge and human chose the same verdict."""
-        if not self.pairs:
-            return 0.0
-        return sum(1 for h, j in self.pairs if h is j) / self.n
+        return raw_agreement(self.pairs)
 
     @property
     def kappa(self) -> float:
-        """Cohen's kappa — agreement corrected for chance.
-
-        Raw agreement flatters a judge on a skewed distribution: if almost
-        everything is "supported", answering "supported" every time scores well
-        while measuring nothing. Kappa subtracts the agreement two random raters
-        with these marginals would reach anyway.
-
-        Returns 0.0 when chance agreement is already perfect, which is the
-        degenerate case where kappa is undefined rather than good.
-        """
-        if not self.pairs:
-            return 0.0
-        human = Counter(h for h, _ in self.pairs)
-        judge = Counter(j for _, j in self.pairs)
-        expected = sum(human[v] * judge[v] for v in set(human) | set(judge)) / (self.n**2)
-        if expected >= 1.0:
-            return 0.0
-        return (self.raw - expected) / (1 - expected)
+        return cohens_kappa(self.pairs)
 
     def confusion(self) -> dict[tuple[Verdict, Verdict], int]:
         return dict(Counter(self.pairs))
