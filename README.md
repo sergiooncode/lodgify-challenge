@@ -300,6 +300,9 @@ depth and broke whenever the package was copied.
   publishing failed, whatever the offline score said.
 - **Verify Inspect's cache is actually reused.** Caching is opt-in and was never
   enabled, so "re-runs are cheap" is assumed, not measured.
+- **Measure judge self-preference.** Generator and judge both default to the same
+  model. Re-judging the frozen generations with a different one would bound it;
+  the human labels agreeing at kappa 0.91 suggests it is small.
 
 ## Extending to production
 
@@ -320,9 +323,6 @@ What would have to change:
   per property; 475 calls took eight minutes here, rate-limited. At ten thousand
   listings the design changes — batch API, a deterministic pre-filter, or caching
   keyed on generation hash.
-- **Split the judge from the generator.** Both are the same model here, so
-  self-preference bias is plausible and entirely unmeasured. Calibration would
-  need re-running against a different judge.
 
 `analysis/` never ships. It measures the measurer, and belongs in CI.
 
