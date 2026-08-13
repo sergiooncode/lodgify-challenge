@@ -261,7 +261,10 @@ depth and broke whenever the package was copied.
 
 ## Not built, and why
 
-- **RAG / retrieval eval** — no corpus; the input is a single structured object.
+- **RAG / retrieval eval** — would help for *controlled* content: approved
+  amenity wording, market-specific compliance phrasing, style exemplars.
+  Avoided for *world* facts like distances, which widen what counts as grounded
+  without fixing the measured failure.
 - **Fine-tuning** — the failure mode is grounding, which is measurable and
   prompt-addressable. Fine-tuning would obscure it.
 - **Agent frameworks, chatbot, serving** — out of scope for an offline eval.
