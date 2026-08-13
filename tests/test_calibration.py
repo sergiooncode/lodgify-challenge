@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from lodgify_challenge.calibration import (
+from lodgify_challenge.analysis.calibration import (
     TODO,
     Agreement,
     LabelRecord,
@@ -14,7 +14,7 @@ from lodgify_challenge.calibration import (
     load_labels,
     self_consistency,
 )
-from lodgify_challenge.grounding import Verdict
+from lodgify_challenge.eval.grounding import Verdict
 
 S, C, U, R = (
     Verdict.SUPPORTED,

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from lodgify_challenge.checks import (
+from lodgify_challenge.eval.checks import (
     ALL_CHECKS,
     DeterministicCheck,
     DiscriminatoryLanguage,

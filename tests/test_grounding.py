@@ -7,7 +7,7 @@ import json
 import pytest
 
 from _helpers import listing
-from lodgify_challenge.grounding import (
+from lodgify_challenge.eval.grounding import (
     Judgement,
     Verdict,
     build_claim_prompt,

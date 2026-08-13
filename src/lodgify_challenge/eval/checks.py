@@ -21,8 +21,8 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import ClassVar
 
-from lodgify_challenge.listing import PropertyListing
-from lodgify_challenge.prompts import SECTIONS
+from lodgify_challenge.domain.listing import PropertyListing
+from lodgify_challenge.domain.prompts import SECTIONS
 
 
 @dataclass(frozen=True)

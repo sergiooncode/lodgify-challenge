@@ -1,6 +1,6 @@
 import pytest
 
-from lodgify_challenge.cost import (
+from lodgify_challenge.analysis.cost import (
     CLAIMS_PER_SAMPLE,
     EXTRACTION_SYSTEM_TOKENS,
     GENERATED_COPY_TOKENS,

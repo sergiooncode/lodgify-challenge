@@ -1,18 +1,77 @@
-{"generation_sha256": "0a5eec016a40cfa6b3cb1589a74189ef04cf28f92d726d124ae7e0cc2c717db7", "claim": "The lodge is located beside \u00deingvellir National Park", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "0a5eec016a40cfa6b3cb1589a74189ef04cf28f92d726d124ae7e0cc2c717db7", "claim": "The lodge is a timber lodge", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "0a5eec016a40cfa6b3cb1589a74189ef04cf28f92d726d124ae7e0cc2c717db7", "claim": "\u00deingvellir National Park is Iceland's historic rift valley", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "0a5eec016a40cfa6b3cb1589a74189ef04cf28f92d726d124ae7e0cc2c717db7", "claim": "The lodge offers total privacy", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "0a5eec016a40cfa6b3cb1589a74189ef04cf28f92d726d124ae7e0cc2c717db7", "claim": "Guests have described the setting as 'stunning'", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "9c8da18af72cad251625eaf3cd6f30fad7101ef59d7275600698313905d8ec39", "claim": "The property is a one-bedroom apartment", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "9c8da18af72cad251625eaf3cd6f30fad7101ef59d7275600698313905d8ec39", "claim": "The apartment is suited for couples or solo travelers", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "9c8da18af72cad251625eaf3cd6f30fad7101ef59d7275600698313905d8ec39", "claim": "The property is located steps from the historic Mercado do Bolh\u00e3o", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "9c8da18af72cad251625eaf3cd6f30fad7101ef59d7275600698313905d8ec39", "claim": "The property has easy access to Porto's caf\u00e9s, shops, and cobblestone streets", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "d1a89970ed95a416d7bfdecdc94745037dd83db92dbd1c0e56d2d88ebc33ed95", "claim": "Wren Cottage is a stone cottage", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "d1a89970ed95a416d7bfdecdc94745037dd83db92dbd1c0e56d2d88ebc33ed95", "claim": "Wren Cottage is located on the edge of Haworth Moor", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "d1a89970ed95a416d7bfdecdc94745037dd83db92dbd1c0e56d2d88ebc33ed95", "claim": "Wren Cottage is close to walking routes onto the moor", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "d1a89970ed95a416d7bfdecdc94745037dd83db92dbd1c0e56d2d88ebc33ed95", "claim": "Wren Cottage has thick walls", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "88bc54ab4d226fd40caa2fa99572bbe7e7beed87d3d8e259eaae159139dbd719", "claim": "The villa is located on a hillside above Sitges", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "88bc54ab4d226fd40caa2fa99572bbe7e7beed87d3d8e259eaae159139dbd719", "claim": "The property has a south-facing terrace", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "88bc54ab4d226fd40caa2fa99572bbe7e7beed87d3d8e259eaae159139dbd719", "claim": "The terrace has sweeping/sea views", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "88bc54ab4d226fd40caa2fa99572bbe7e7beed87d3d8e259eaae159139dbd719", "claim": "The living area is open-plan", "verdict": "TODO(human)", "note": ""}
-{"generation_sha256": "88bc54ab4d226fd40caa2fa99572bbe7e7beed87d3d8e259eaae159139dbd719", "claim": "It is a five-minute walk downhill to the beach", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "8265a35dfebba6ea3c0f4720e45cd92d0ed5e9b6cd0830324ada8f3f535ed8a9", "claim": "The lodge is a timber lodge", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "8265a35dfebba6ea3c0f4720e45cd92d0ed5e9b6cd0830324ada8f3f535ed8a9", "claim": "\u00deingvellir National Park is in Iceland", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "8265a35dfebba6ea3c0f4720e45cd92d0ed5e9b6cd0830324ada8f3f535ed8a9", "claim": "The lodge is located within \u00deingvellir National Park", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "8265a35dfebba6ea3c0f4720e45cd92d0ed5e9b6cd0830324ada8f3f535ed8a9", "claim": "The lodge has a full bathroom", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "8265a35dfebba6ea3c0f4720e45cd92d0ed5e9b6cd0830324ada8f3f535ed8a9", "claim": "\u00deingvellir National Park is known for dramatic geology and history", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "0a4061c3922592df4031115fa4179661ab38bf71003f6a0ebf30514d36bad9c8", "claim": "It is a one-bedroom retreat", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "0a4061c3922592df4031115fa4179661ab38bf71003f6a0ebf30514d36bad9c8", "claim": "It is moments from Mercado do Bolh\u00e3o", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "0a4061c3922592df4031115fa4179661ab38bf71003f6a0ebf30514d36bad9c8", "claim": "The property is located steps from Porto's Bolh\u00e3o Market", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "0a4061c3922592df4031115fa4179661ab38bf71003f6a0ebf30514d36bad9c8", "claim": "It is located in the heart of Porto", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c5369638badb5b8a328a380ff876c1dbd9d2fdc61bcdaf790f8582a949a3de1d", "claim": "The property is called Rorbu Ytresand", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c5369638badb5b8a328a380ff876c1dbd9d2fdc61bcdaf790f8582a949a3de1d", "claim": "It is a converted fisherman's cabin", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c5369638badb5b8a328a380ff876c1dbd9d2fdc61bcdaf790f8582a949a3de1d", "claim": "The rating is based on 28 stays", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c5369638badb5b8a328a380ff876c1dbd9d2fdc61bcdaf790f8582a949a3de1d", "claim": "The tide moves beneath the floorboards", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c5369638badb5b8a328a380ff876c1dbd9d2fdc61bcdaf790f8582a949a3de1d", "claim": "Northern lights are visible from its private deck", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f18004eb6308d8a57ce0b4b8cb4b3763d71a5f7fcfec5b7bd8ea8c980b299727", "claim": "The property is called Wren Cottage", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f18004eb6308d8a57ce0b4b8cb4b3763d71a5f7fcfec5b7bd8ea8c980b299727", "claim": "It is located on the edge of Haworth Moor", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f18004eb6308d8a57ce0b4b8cb4b3763d71a5f7fcfec5b7bd8ea8c980b299727", "claim": "The garden is quiet and sheltered", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f18004eb6308d8a57ce0b4b8cb4b3763d71a5f7fcfec5b7bd8ea8c980b299727", "claim": "It is steps from Haworth's cobbled streets", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f18004eb6308d8a57ce0b4b8cb4b3763d71a5f7fcfec5b7bd8ea8c980b299727", "claim": "Guests consistently call the wood burner 'the main event'", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "21cada4e35f2caffdb83039c8509e71bf27a7dbdc221be1a765501b73336d59c", "claim": "The property is called Podere Le Querce", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "21cada4e35f2caffdb83039c8509e71bf27a7dbdc221be1a765501b73336d59c", "claim": "The property is a stone farmhouse", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "21cada4e35f2caffdb83039c8509e71bf27a7dbdc221be1a765501b73336d59c", "claim": "The property is surrounded by olive groves and vineyards", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "21cada4e35f2caffdb83039c8509e71bf27a7dbdc221be1a765501b73336d59c", "claim": "The property has air conditioning throughout", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "21cada4e35f2caffdb83039c8509e71bf27a7dbdc221be1a765501b73336d59c", "claim": "The pool water runs cool in early season (e.g., June)", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f41a9b81292be9202e8c3629af0b13731087483237c69c86355e7874b5583d02", "claim": "Ceilings are over three metres tall", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f41a9b81292be9202e8c3629af0b13731087483237c69c86355e7874b5583d02", "claim": "The property is located in Kreuzberg", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f41a9b81292be9202e8c3629af0b13731087483237c69c86355e7874b5583d02", "claim": "The property is steps from Kreuzberg's coffee shops", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f41a9b81292be9202e8c3629af0b13731087483237c69c86355e7874b5583d02", "claim": "The neighbourhood has galleries", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "f41a9b81292be9202e8c3629af0b13731087483237c69c86355e7874b5583d02", "claim": "The shared courtyard is quiet, even on weekend nights", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "401336136b06c6cdaeb956bde34ffe8d57d9cd25b6730022cecafbfc71486070", "claim": "The property is a studio located in Gra\u00e7a, Lisbon", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "401336136b06c6cdaeb956bde34ffe8d57d9cd25b6730022cecafbfc71486070", "claim": "The property has a private balcony", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "401336136b06c6cdaeb956bde34ffe8d57d9cd25b6730022cecafbfc71486070", "claim": "The property is near a tram stop", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "401336136b06c6cdaeb956bde34ffe8d57d9cd25b6730022cecafbfc71486070", "claim": "The tiled interiors are easy to keep cool and fresh", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "401336136b06c6cdaeb956bde34ffe8d57d9cd25b6730022cecafbfc71486070", "claim": "The balcony catches afternoon sun", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408", "claim": "The villa is located on a hillside above Sitges", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408", "claim": "The villa has sweeping sea views", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408", "claim": "Free on-site parking for two cars is rare in Sitges", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408", "claim": "The villa has 3 full bathrooms", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "e2dc40d547ff35f81345f5523cc1f3b9d89297a35dec2934a37d0f57f2e42408", "claim": "The beach is a 5-minute walk from the villa", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c4367559370f0deab73c24c67858fc1eda08d12915614490e1e1f58289ccfb6a", "claim": "The lodge is located beside the Rift Valley in \u00deingvellir National Park", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c4367559370f0deab73c24c67858fc1eda08d12915614490e1e1f58289ccfb6a", "claim": "The lodge sits where Iceland's tectonic plates pull apart", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c4367559370f0deab73c24c67858fc1eda08d12915614490e1e1f58289ccfb6a", "claim": "\u00deingvellir National Park is described as Iceland's geological heart", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c4367559370f0deab73c24c67858fc1eda08d12915614490e1e1f58289ccfb6a", "claim": "\u00deingvellir is the birthplace of Iceland's ancient parliament", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "c4367559370f0deab73c24c67858fc1eda08d12915614490e1e1f58289ccfb6a", "claim": "Guests describe the setting as stunning", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d0c3036e13100e322e960e34da4c1b053f9748994fa2a250e8104c148f26b625", "claim": "The property is a one-bedroom apartment", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d0c3036e13100e322e960e34da4c1b053f9748994fa2a250e8104c148f26b625", "claim": "The apartment is sized for couples or solo travelers", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d0c3036e13100e322e960e34da4c1b053f9748994fa2a250e8104c148f26b625", "claim": "The property is located steps from Mercado do Bolh\u00e3o", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d0c3036e13100e322e960e34da4c1b053f9748994fa2a250e8104c148f26b625", "claim": "Mercado do Bolh\u00e3o is a historic food and flower market", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "2d50160237eef8ebcbf6d3cc8aaf2f7304c321e4cc4f07258b38fbe87291ea7d", "claim": "Rorbu Ytresand is an authentic rorbu (fisherman's cabin)", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "2d50160237eef8ebcbf6d3cc8aaf2f7304c321e4cc4f07258b38fbe87291ea7d", "claim": "The cabin is built on posts directly over the sea", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "2d50160237eef8ebcbf6d3cc8aaf2f7304c321e4cc4f07258b38fbe87291ea7d", "claim": "The cabin is built on timber posts above the tide", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "2d50160237eef8ebcbf6d3cc8aaf2f7304c321e4cc4f07258b38fbe87291ea7d", "claim": "The property is located in Arctic Norway", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "2d50160237eef8ebcbf6d3cc8aaf2f7304c321e4cc4f07258b38fbe87291ea7d", "claim": "The property offers views of the northern lights from the deck", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "91e80c837e14fb638f157f2f80f243f958694cb24f13ba7ede165c2246a2ff9d", "claim": "Wren Cottage is a stone cottage", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "91e80c837e14fb638f157f2f80f243f958694cb24f13ba7ede165c2246a2ff9d", "claim": "Wren Cottage is located on the edge of Haworth Moor", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "91e80c837e14fb638f157f2f80f243f958694cb24f13ba7ede165c2246a2ff9d", "claim": "The rating is based on 14 guests", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "91e80c837e14fb638f157f2f80f243f958694cb24f13ba7ede165c2246a2ff9d", "claim": "The cottage has low beams", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "3b622880d54b1dd65e5092d07de2208e3a1a9c77fc22bd7220bcfed5a447de94", "claim": "The property is called Podere Le Querce", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "3b622880d54b1dd65e5092d07de2208e3a1a9c77fc22bd7220bcfed5a447de94", "claim": "The property is a stone farmhouse", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "3b622880d54b1dd65e5092d07de2208e3a1a9c77fc22bd7220bcfed5a447de94", "claim": "The property has air conditioning throughout", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "3b622880d54b1dd65e5092d07de2208e3a1a9c77fc22bd7220bcfed5a447de94", "claim": "The property is located between the vineyards of Greve in Chianti and the Tuscan hills", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "3b622880d54b1dd65e5092d07de2208e3a1a9c77fc22bd7220bcfed5a447de94", "claim": "The access road to the property is a rutted two-kilometre road", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d80c9c2419429aab5464729e50fc11116a4f802c28f14851d183e7f097e9aac1", "claim": "The property is an Altbau loft.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d80c9c2419429aab5464729e50fc11116a4f802c28f14851d183e7f097e9aac1", "claim": "It is located in Kreuzberg.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d80c9c2419429aab5464729e50fc11116a4f802c28f14851d183e7f097e9aac1", "claim": "The apartment has a full kitchen.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d80c9c2419429aab5464729e50fc11116a4f802c28f14851d183e7f097e9aac1", "claim": "The street is known for its coffee culture.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "d80c9c2419429aab5464729e50fc11116a4f802c28f14851d183e7f097e9aac1", "claim": "The courtyard is quiet.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "b471ebad01ea5c91c35b7d8192eb33a3d5102cd7849c927f9fec08e7f0ac3a18", "claim": "The property is a studio located in Gra\u00e7a, Lisbon", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "b471ebad01ea5c91c35b7d8192eb33a3d5102cd7849c927f9fec08e7f0ac3a18", "claim": "The studio is designed for two people", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "b471ebad01ea5c91c35b7d8192eb33a3d5102cd7849c927f9fec08e7f0ac3a18", "claim": "Gra\u00e7a has hilltop viewpoints", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "b471ebad01ea5c91c35b7d8192eb33a3d5102cd7849c927f9fec08e7f0ac3a18", "claim": "Gra\u00e7a has tiled fa\u00e7ades", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "b471ebad01ea5c91c35b7d8192eb33a3d5102cd7849c927f9fec08e7f0ac3a18", "claim": "The balcony catches afternoon sun", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "1862da264efd46a623bdbfbdd96328e71613486fd55c4bb851cff1c8cba1cb88", "claim": "The villa is located on the hillside above Sitges.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "1862da264efd46a623bdbfbdd96328e71613486fd55c4bb851cff1c8cba1cb88", "claim": "The property has a south-facing terrace.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "1862da264efd46a623bdbfbdd96328e71613486fd55c4bb851cff1c8cba1cb88", "claim": "The property has air conditioning throughout.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "1862da264efd46a623bdbfbdd96328e71613486fd55c4bb851cff1c8cba1cb88", "claim": "Sitges has golden beaches.", "verdict": "TODO(human)", "note": ""}
+{"generation_sha256": "1862da264efd46a623bdbfbdd96328e71613486fd55c4bb851cff1c8cba1cb88", "claim": "The beach is a 5-minute walk downhill.", "verdict": "TODO(human)", "note": ""}

@@ -1,6 +1,6 @@
-from lodgify_challenge.dataset import ADVERSARIAL, FIXTURE_DIR, property_samples
-from lodgify_challenge.prompts import render_listing
-from lodgify_challenge.adapters import listing_from_json
+from lodgify_challenge.eval.dataset import ADVERSARIAL, FIXTURE_DIR, property_samples
+from lodgify_challenge.domain.prompts import render_listing
+from lodgify_challenge.domain.adapters import listing_from_json
 
 
 def test_every_fixture_becomes_a_sample() -> None:
@@ -59,7 +59,7 @@ def test_sparse_property_renders_explicit_absences_not_blanks() -> None:
 
 
 def test_render_is_pure_and_depends_only_on_the_listing(tmp_path) -> None:
-    from lodgify_challenge.dataset import FIXTURE_DIR
+    from lodgify_challenge.eval.dataset import FIXTURE_DIR
 
     listing = listing_from_json((FIXTURE_DIR / "villa_sitges.json").read_text())
     assert render_listing(listing) == render_listing(listing)

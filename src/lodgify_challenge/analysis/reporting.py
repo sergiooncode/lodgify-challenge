@@ -15,7 +15,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from statistics import mean
 
-from lodgify_challenge.prompts import SECTIONS
+from lodgify_challenge.domain.prompts import SECTIONS
 
 
 @dataclass(frozen=True)

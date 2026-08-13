@@ -6,7 +6,7 @@ can be attributed to the exact wording that produced it.
 
 from __future__ import annotations
 
-from lodgify_challenge.listing import PropertyListing
+from lodgify_challenge.domain.listing import PropertyListing
 
 SECTIONS: tuple[str, ...] = (
     "HERO HEADLINE",

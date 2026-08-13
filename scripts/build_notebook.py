@@ -71,7 +71,7 @@ md(
     "the injection report both depend on them existing from the start.",
 )
 code(
-    "from lodgify_challenge.dataset import property_samples",
+    "from lodgify_challenge.eval.dataset import property_samples",
     "",
     "for s in sorted(property_samples(), key=lambda s: (s.metadata['slice'], s.id)):",
     "    listing = s.metadata['listing']",
@@ -89,7 +89,7 @@ md(
 )
 code(
     "from inspect_ai.log import list_eval_logs, read_eval_log",
-    "from lodgify_challenge.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME",
+    "from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME",
     "",
     "runs = [read_eval_log(i) for i in sorted(list_eval_logs(str(settings.log_dir)), key=lambda i: i.name)]",
     "",
@@ -101,6 +101,38 @@ code(
     "for label, log in (('v0', v0), ('v1', v1)):",
     "    print(f'{label}: {log.eval.task}  model={log.eval.model}  '",
     "          f'samples={len(log.samples)}  epochs={log.eval.config.epochs}')",
+)
+
+md(
+    "## Running the pipeline",
+    "",
+    "The cell below generates and scores copy for real. It runs only when a key is",
+    "present, and is limited to a single property — enough to see generate → score",
+    "end to end for a few cents. The committed logs hold the full eight-property",
+    "runs that everything below is read from.",
+    "",
+    "Without a key it skips and says so. That is the reviewer's path: the pipeline",
+    "is demonstrable, and none of the results depend on being able to run it.",
+)
+code(
+    "from inspect_ai import eval as inspect_eval",
+    "from lodgify_challenge.eval.tasks import generate_copy_v1",
+    "",
+    "if not settings.has_api_key:",
+    "    print('No API key — skipping generation.')",
+    "    print('Everything below reads the committed logs and needs no credentials.')",
+    "else:",
+    "    settings.export()",
+    "    live = inspect_eval(",
+    "        generate_copy_v1(judge=settings.judge_model),",
+    "        model=settings.generator_model,",
+    "        log_dir=str(settings.log_dir),",
+    "        limit=1,",
+    "    )[0]",
+    "    print(f'status: {live.status}')",
+    "    for score in live.results.scores:",
+    "        print('  ' + score.name + ': ' + ', '.join(",
+    "            f'{k}={v.value:.2f}' for k, v in score.metrics.items()))",
 )
 
 md(
@@ -122,6 +154,39 @@ code(
     "print('-' * 56)",
     "for name in a:",
     "    print(f'{name:34}{a[name]:>7.2f}{b[name]:>7.2f}{b[name]-a[name]:>+8.2f}')",
+)
+
+md(
+    "### Property by property",
+    "",
+    "The aggregate hides whether an improvement is broad or one property carrying",
+    "the rest. Direction is what the sign test rests on: with eight properties all",
+    "moving the same way it reaches p = 0.008, where four could not have reached",
+    "significance at all.",
+)
+code(
+    "from statistics import mean",
+    "",
+    "def precision_by_property(log):",
+    "    out = {}",
+    "    for s in log.samples:",
+    "        g = s.scores.get('grounding')",
+    "        if g:",
+    "            out.setdefault(str(s.id), []).append(g.value['precision'])",
+    "    return {k: mean(v) for k, v in out.items()}",
+    "",
+    "p0, p1 = precision_by_property(v0), precision_by_property(v1)",
+    "slices = {str(s.id): s.metadata['slice'] for s in v0.samples}",
+    "",
+    "print(f\"{'property':26}{'slice':13}{'v0':>7}{'v1':>7}{'delta':>8}\")",
+    "print('-' * 61)",
+    "for name in sorted(p0, key=lambda k: (slices.get(k, ''), k)):",
+    "    print(f'{name:26}{slices.get(name, \"?\"):13}{p0[name]:>7.2f}{p1[name]:>7.2f}'",
+    "          f'{p1[name]-p0[name]:>+8.2f}')",
+    "",
+    "up = sum(1 for k in p0 if p1[k] > p0[k])",
+    "down = sum(1 for k in p0 if p1[k] < p0[k])",
+    "print(f'\\n{up}/{len(p0)} properties improved, {down} regressed')",
 )
 
 md(
@@ -184,7 +249,7 @@ md(
     "generated copy is least trustworthy.",
 )
 code(
-    "from lodgify_challenge.reporting import by_slice",
+    "from lodgify_challenge.analysis.reporting import by_slice",
     "",
     "for label, log in (('v0', v0), ('v1', v1)):",
     "    slices = by_slice(log.samples)",
@@ -209,7 +274,7 @@ md(
 code(
     "import json",
     "from pathlib import Path",
-    "from lodgify_challenge.calibration import cohens_kappa, load_labels, raw_agreement",
+    "from lodgify_challenge.analysis.calibration import cohens_kappa, load_labels, raw_agreement",
     "from lodgify_challenge.config import REPO_ROOT",
     "",
     "labels = load_labels(REPO_ROOT / 'data' / 'gold_labels.jsonl')",
@@ -260,7 +325,7 @@ code(
     "if not probe.is_file():",
     "    print('No injection probe recorded.')",
     "else:",
-    "    from lodgify_challenge.reporting import injection_hits, refused_injection",
+    "    from lodgify_challenge.analysis.reporting import injection_hits, refused_injection",
     "    data = json.loads(probe.read_text())",
     "    results = data['results']",
     "    landed = sum(bool(injection_hits(r['completion'])) for r in results)",

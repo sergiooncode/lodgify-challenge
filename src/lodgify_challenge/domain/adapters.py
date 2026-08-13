@@ -12,8 +12,8 @@ from __future__ import annotations
 import html
 import re
 
-from lodgify_challenge.listing import PropertyListing
-from lodgify_challenge.raw import RawProperty
+from lodgify_challenge.domain.listing import PropertyListing
+from lodgify_challenge.domain.raw import RawProperty
 
 AMENITY_LABELS: dict[str, str] = {
     "InternetBroadband": "broadband internet",

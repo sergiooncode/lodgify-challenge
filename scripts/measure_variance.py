@@ -21,15 +21,15 @@ from pathlib import Path
 from inspect_ai.log import list_eval_logs, read_eval_log
 from inspect_ai.model import get_model
 
-from lodgify_challenge.calibration import generation_hash, self_consistency
+from lodgify_challenge.analysis.calibration import generation_hash, self_consistency
 from lodgify_challenge.config import REPO_ROOT
-from lodgify_challenge.grounding import (
+from lodgify_challenge.eval.grounding import (
     Verdict,
     build_claim_prompt,
     parse_claim_verdict,
 )
-from lodgify_challenge.listing import PropertyListing
-from lodgify_challenge.tasks import GEN_V0_TASK_NAME
+from lodgify_challenge.domain.listing import PropertyListing
+from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME
 
 OUT = REPO_ROOT / "data" / "judge_variance.json"
 

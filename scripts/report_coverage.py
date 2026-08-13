@@ -18,9 +18,9 @@ from collections import Counter
 
 from inspect_ai.log import list_eval_logs, read_eval_log
 
-from lodgify_challenge.calibration import TODO, cohens_kappa, generation_hash, raw_agreement
+from lodgify_challenge.analysis.calibration import TODO, cohens_kappa, generation_hash, raw_agreement
 from lodgify_challenge.config import REPO_ROOT
-from lodgify_challenge.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
+from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
 
 LABELS = REPO_ROOT / "data" / "coverage_labels.jsonl"
 

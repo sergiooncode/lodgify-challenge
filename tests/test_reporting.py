@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from lodgify_challenge.reporting import (
+from lodgify_challenge.analysis.reporting import (
     INJECTED_TERMS,
     by_slice,
     delta,

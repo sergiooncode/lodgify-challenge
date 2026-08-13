@@ -4,14 +4,14 @@ from pathlib import Path
 
 import pytest
 
-from lodgify_challenge.adapters import (
+from lodgify_challenge.domain.adapters import (
     AMENITY_LABELS,
     listing_from_json,
     strip_html,
     to_listing,
     type_label,
 )
-from lodgify_challenge.raw import RawProperty
+from lodgify_challenge.domain.raw import RawProperty
 
 TESTS_ROOT = Path(__file__).resolve().parent.parent
 FIXTURE_DIR = TESTS_ROOT / "data" / "fixtures"
@@ -150,9 +150,18 @@ def test_review_text_is_never_merged_into_the_description() -> None:
 # --- structural --------------------------------------------------------------
 
 
+def test_the_structural_scan_actually_sees_the_package() -> None:
+    """rglob, not glob: subpackages would make the two scans below silently
+    vacuous — passing because they inspected nothing."""
+    scanned = list(SRC_DIR.rglob("*.py"))
+    assert len(scanned) >= 10, f"only {len(scanned)} modules scanned"
+    assert any(p.name == "raw.py" for p in scanned)
+    assert any(p.name == "adapters.py" for p in scanned)
+
+
 def test_raw_module_is_imported_only_by_adapters() -> None:
     offenders = []
-    for path in SRC_DIR.glob("*.py"):
+    for path in SRC_DIR.rglob("*.py"):
         if path.name in {"raw.py", "adapters.py"}:
             continue
         tree = ast.parse(path.read_text())
@@ -167,7 +176,7 @@ def test_raw_module_is_imported_only_by_adapters() -> None:
 def test_brief_field_names_do_not_appear_outside_raw_and_adapters() -> None:
     brief_only = ("num_of_reviews", "average_review_score", "rental_info", "house_rules")
     offenders = {}
-    for path in SRC_DIR.glob("*.py"):
+    for path in SRC_DIR.rglob("*.py"):
         if path.name in {"raw.py", "adapters.py"}:
             continue
         text = path.read_text()

@@ -23,11 +23,11 @@ import json
 
 from inspect_ai.log import list_eval_logs, read_eval_log
 
-from lodgify_challenge.calibration import TODO, generation_hash
+from lodgify_challenge.analysis.calibration import TODO, generation_hash
 from lodgify_challenge.config import REPO_ROOT
-from lodgify_challenge.grounding import key_facts
-from lodgify_challenge.listing import PropertyListing
-from lodgify_challenge.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
+from lodgify_challenge.eval.grounding import key_facts
+from lodgify_challenge.domain.listing import PropertyListing
+from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
 
 PROPERTIES = ("villa_sitges", "apartment_porto_sparse")
 

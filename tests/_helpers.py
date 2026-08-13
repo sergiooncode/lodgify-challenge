@@ -3,7 +3,7 @@ test files use these as plain values and factories, not injected fixtures."""
 
 from __future__ import annotations
 
-from lodgify_challenge.listing import PropertyListing
+from lodgify_challenge.domain.listing import PropertyListing
 
 CLEAN = """## HERO HEADLINE
 Hillside villa in Sitges with room for eight

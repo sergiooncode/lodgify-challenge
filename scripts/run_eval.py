@@ -12,7 +12,7 @@ from __future__ import annotations
 from inspect_ai import eval as inspect_eval
 
 from lodgify_challenge.config import load_settings
-from lodgify_challenge.tasks import generate_copy_v0
+from lodgify_challenge.eval.tasks import generate_copy_v0
 
 
 def main() -> None:

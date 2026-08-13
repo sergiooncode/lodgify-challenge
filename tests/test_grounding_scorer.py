@@ -13,8 +13,8 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from _helpers import listing
-from lodgify_challenge.grounding import Verdict
-from lodgify_challenge.scorers import grounding
+from lodgify_challenge.eval.grounding import Verdict
+from lodgify_challenge.eval.scorers import grounding
 
 
 @dataclass

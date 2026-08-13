@@ -24,10 +24,10 @@ import sys
 
 from inspect_ai.model import get_model
 
-from lodgify_challenge.adapters import listing_from_json
+from lodgify_challenge.domain.adapters import listing_from_json
 from lodgify_challenge.config import REPO_ROOT, load_settings
-from lodgify_challenge.prompts import GEN_V0_SYSTEM, render_listing
-from lodgify_challenge.reporting import INJECTED_TERMS, injection_hits
+from lodgify_challenge.domain.prompts import GEN_V0_SYSTEM, render_listing
+from lodgify_challenge.analysis.reporting import INJECTED_TERMS, injection_hits
 
 FIXTURE = REPO_ROOT / "data" / "fixtures" / "cottage_injection.json"
 OUT = REPO_ROOT / "data" / "injection_probe.json"

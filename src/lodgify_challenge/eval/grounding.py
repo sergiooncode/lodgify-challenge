@@ -17,7 +17,7 @@ import re
 from dataclasses import dataclass
 from enum import StrEnum
 
-from lodgify_challenge.listing import PropertyListing
+from lodgify_challenge.domain.listing import PropertyListing
 
 
 class Verdict(StrEnum):
@@ -170,7 +170,7 @@ def _structured_and_reviews(listing: PropertyListing) -> tuple[str, str]:
     They must stay separate or the `review_sourced` verdict is unreachable: a
     judge that cannot tell which source backs a claim cannot mark it.
     """
-    from lodgify_challenge.prompts import render_listing
+    from lodgify_challenge.domain.prompts import render_listing
 
     facts = render_listing(listing)
     for review in listing.reviews:

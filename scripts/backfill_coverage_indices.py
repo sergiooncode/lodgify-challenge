@@ -20,11 +20,11 @@ import json
 from inspect_ai.log import list_eval_logs, read_eval_log
 from inspect_ai.model import get_model
 
-from lodgify_challenge.calibration import generation_hash
+from lodgify_challenge.analysis.calibration import generation_hash
 from lodgify_challenge.config import REPO_ROOT, load_settings
-from lodgify_challenge.grounding import build_coverage_prompt, key_facts, parse_coverage
-from lodgify_challenge.listing import PropertyListing
-from lodgify_challenge.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
+from lodgify_challenge.eval.grounding import build_coverage_prompt, key_facts, parse_coverage
+from lodgify_challenge.domain.listing import PropertyListing
+from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME, GEN_V1_TASK_NAME
 
 PROPERTIES = ("villa_sitges", "apartment_porto_sparse")
 OUT = REPO_ROOT / "data" / "coverage_judge.json"

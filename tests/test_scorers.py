@@ -10,8 +10,8 @@ import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 
-from lodgify_challenge.checks import ALL_CHECKS, PlaceholderLeakage, RequiredSections
-from lodgify_challenge.scorers import check_scorer, deterministic_scorers
+from lodgify_challenge.eval.checks import ALL_CHECKS, PlaceholderLeakage, RequiredSections
+from lodgify_challenge.eval.scorers import check_scorer, deterministic_scorers
 from _helpers import CLEAN, listing
 
 

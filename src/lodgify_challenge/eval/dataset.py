@@ -11,9 +11,9 @@ from pathlib import Path
 
 from inspect_ai.dataset import MemoryDataset, Sample
 
-from lodgify_challenge.adapters import listing_from_json
+from lodgify_challenge.domain.adapters import listing_from_json
 from lodgify_challenge.config import REPO_ROOT
-from lodgify_challenge.prompts import render_listing
+from lodgify_challenge.domain.prompts import render_listing
 
 FIXTURE_DIR = REPO_ROOT / "data" / "fixtures"
 

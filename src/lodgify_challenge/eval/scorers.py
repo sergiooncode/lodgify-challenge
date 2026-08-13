@@ -14,8 +14,8 @@ from inspect_ai.model import ModelOutput, get_model
 from inspect_ai.scorer import Score, Scorer, Target, accuracy, mean, scorer, stderr
 from inspect_ai.solver import TaskState
 
-from lodgify_challenge.checks import ALL_CHECKS, DeterministicCheck
-from lodgify_challenge.grounding import (
+from lodgify_challenge.eval.checks import ALL_CHECKS, DeterministicCheck
+from lodgify_challenge.eval.grounding import (
     Verdict,
     build_claim_prompt,
     build_coverage_prompt,
@@ -25,7 +25,7 @@ from lodgify_challenge.grounding import (
     parse_coverage,
     summarise,
 )
-from lodgify_challenge.listing import PropertyListing
+from lodgify_challenge.domain.listing import PropertyListing
 
 
 class Judge(Protocol):

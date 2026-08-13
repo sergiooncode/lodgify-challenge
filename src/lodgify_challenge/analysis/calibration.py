@@ -25,7 +25,7 @@ from collections.abc import Hashable, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from lodgify_challenge.grounding import Verdict
+from lodgify_challenge.eval.grounding import Verdict
 
 TODO = "TODO(human)"
 

@@ -11,10 +11,10 @@ from __future__ import annotations
 
 from inspect_ai.log import list_eval_logs, read_eval_log
 
-from lodgify_challenge.calibration import compare, generation_hash, load_labels
+from lodgify_challenge.analysis.calibration import compare, generation_hash, load_labels
 from lodgify_challenge.config import REPO_ROOT
-from lodgify_challenge.grounding import Verdict
-from lodgify_challenge.tasks import GEN_V0_TASK_NAME
+from lodgify_challenge.eval.grounding import Verdict
+from lodgify_challenge.eval.tasks import GEN_V0_TASK_NAME
 
 LABELS = REPO_ROOT / "data" / "gold_labels.jsonl"
 

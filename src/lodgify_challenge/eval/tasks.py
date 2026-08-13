@@ -10,9 +10,9 @@ from inspect_ai.dataset import Sample
 from inspect_ai.scorer import includes
 from inspect_ai.solver import generate, system_message
 
-from lodgify_challenge.dataset import property_dataset
-from lodgify_challenge.prompts import GEN_V0, GEN_V0_SYSTEM, GEN_V1, GEN_V1_SYSTEM
-from lodgify_challenge.scorers import deterministic_scorers, grounding
+from lodgify_challenge.eval.dataset import property_dataset
+from lodgify_challenge.domain.prompts import GEN_V0, GEN_V0_SYSTEM, GEN_V1, GEN_V1_SYSTEM
+from lodgify_challenge.eval.scorers import deterministic_scorers, grounding
 
 PROBE_TOKEN = "PROBE-OK"
 GEN_V0_TASK_NAME = f"generate_copy_{GEN_V0}"
