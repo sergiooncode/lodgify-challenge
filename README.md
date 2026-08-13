@@ -72,6 +72,14 @@ and claims unsupportable by construction (price, availability and distance have
 no schema field at all, so any such claim is ungrounded whatever the model
 wrote). They need no API call, so they re-score a frozen run for nothing.
 
+**The generator writes plain text, not a JSON tool call.** That is deliberate and
+it costs something. Constrained decoding would guarantee the four sections, and
+the format check would then score 1.00 by construction — measuring the decoder,
+not the copy. Keeping the sections as a thing the model can get wrong is what
+lets `required_sections` and `preamble_leakage` catch anything at all, and both
+did: v0 scores 0.94 and 0.88 on them. In production you would probably take the
+guarantee and delete the checks; here the checks are the point.
+
 **Shape, not plausibility.** `bedrooms: -2` and a review score of 7.4 out of 5
 parse without complaint. Absurd values must reach the scorers to be measured; a
 schema that repaired them would move the failure from a reported metric to an
