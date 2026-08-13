@@ -71,18 +71,19 @@ first.
 
 ## Phase 1 — Skeleton + data model
 
-- [ ] `pyproject.toml`, package layout, `CLAUDE.md` importing `@AGENTS.md`
-- [ ] `PropertyListing` canonical model — shape not plausibility (AGENTS §4)
-- [ ] Raw schema type matching the brief's object exactly, in an adapters module;
-      `to_listing()`. Raw field names appear nowhere else
-- [ ] Amenity + `property_type` code→label vocabulary, hand-authored, living with
+- [x] `pyproject.toml`, package layout, `CLAUDE.md` importing `@AGENTS.md`
+- [x] `PropertyListing` canonical model — shape not plausibility (AGENTS §4)
+- [x] Raw schema type matching the brief's object exactly, in an adapters module;
+      `to_listing()`. Raw field names appear nowhere else — enforced by two
+      structural tests (AST import scan, and a grep for brief-only field names)
+- [x] Amenity + `property_type` code→label vocabulary, hand-authored, living with
       the adapter and exported for the Phase 4 scorer. Covers only the codes the
       fixtures actually use — not an exhaustive map. Labels are minimal and
       literal: `InternetBroadband` → "broadband internet", never "free
       high-speed WiFi"; `NormalApartment` → "apartment". Every adjective the map
       does not license is a hallucination Phase 4 must catch
-- [ ] PreToolUse hook blocking writes to the gold-labels file
-- [ ] Three or four synthetic fixtures, including the adversarial slice (one
+- [x] PreToolUse hook blocking writes to the gold-labels file
+- [x] Three or four synthetic fixtures, including the adversarial slice (one
       injection, one absurd-value). Load-bearing, not polish: Phase 7 is a
       protected phase *because* it is nearly free, and it is only free if the
       slice already exists. Author it later and Phase 7 stops being cheap
@@ -98,35 +99,32 @@ invents at runtime.
 
 The point is to see a real score immediately, before the generator is any good.
 
-- [ ] `gen_v0` solver: deliberately mediocre prompt, produces the four sections
-- [ ] One deterministic scorer (placeholder leakage or format) wired into a Task
-- [ ] Run the Task; open the log
-- [ ] **Freeze this run over all fixtures and keep it.** Phase 5's hand labels
+- [x] `gen_v0` solver: deliberately mediocre prompt, produces the four sections
+- [x] One deterministic scorer (format) wired into a Task
+- [x] Run the Task; open the log. 4 samples, format accuracy 1.000, ~$0.05 —
+      within 10% of the cost model's projection
+- [x] **Freeze this run over all fixtures and keep it.** Phase 5's hand labels
       are written against it, and hand-labelling is the one serial, human-blocked
       task in the plan — starting it late is how calibration gets cut
 
-**Acceptance:** one property → generated copy → one score, visible in the log.
-Pipeline is runnable end to end. Everything after this thickens it. Labelling
-can begin the moment this run exists, in parallel with Phases 3 and 4.
+Findings from this run are written up in the README.
 
 ---
 
 ## Phase 3 — Deterministic scorers
 
-- [ ] Base `Scorer` class with concrete subclasses — settled here, not
-      retrofitted at the end. This is where the brief's inheritance requirement
-      lives, so it shapes every scorer below it
-- [ ] Format: four sections present, length bounds, valid structure
-- [ ] Placeholder leakage / unfilled templates
-- [ ] Banned phrasing + unverifiable superlatives
-- [ ] Unsupportable by construction: price, rates, deals, availability, distance
-      to landmarks. No schema field can ground any of these, so the check is
-      exact and costs no model call
-- [ ] Fair-Housing-style discriminatory language
-- [ ] Coverage: were high-value input fields used?
+- [x] Base `DeterministicCheck` class with a concrete subclass per check, in
+      `checks.py`. `scorers.py` is a thin adapter to Inspect, so the hierarchy
+      sits on top of Inspect rather than competing with it
+- [x] Format: four sections present, headline fits its single-line slot
+- [x] Placeholder leakage / unfilled templates
+- [x] Unverifiable superlatives
+- [x] Unsupportable by construction: price, availability, proximity
+- [x] Fair-Housing-style discriminatory language
+- [x] Coverage: were high-value input fields used?
 
-**Acceptance:** each is a scorer with a unit test against fixed strings, no
-network. All run before any model-graded scorer.
+**Acceptance met:** unit tests against fixed strings, no network. All seven
+re-scored the frozen run with zero API calls. Results in the README.
 
 ---
 
@@ -135,11 +133,11 @@ network. All run before any model-graded scorer.
 The brief names dependency injection, inheritance, and mocking explicitly. This
 is graded work, not a byproduct of Phase 3.
 
-- [ ] Scorer subclasses tested against fixed strings — exercises the hierarchy,
+- [x] Scorer subclasses tested against fixed strings — exercises the hierarchy,
       not just the leaves
-- [ ] Model access injected; the model-graded scorer tested against a mock
+- [x] Model access injected; the model-graded scorer tested against a mock
       client that returns canned verdicts
-- [ ] Adapter tests: garbage survives intact, nothing clamped or repaired
+- [x] Adapter tests: garbage survives intact, nothing clamped or repaired
 
 **Acceptance:** `uv run pytest` is green with `ANTHROPIC_API_KEY` unset. A test
 that needs a key is written wrong (AGENTS §4).
@@ -148,30 +146,23 @@ that needs a key is written wrong (AGENTS §4).
 
 ## Phase 4 — Grounding scorer (headline metric)
 
-- [ ] Claim extraction from generated copy → atomic claims
-- [ ] Decide the verify shape up front: one call per claim, or all claims in one
-      batched call. Per-claim is ~2× the cost and 15× the calls, so it is a
-      rate-limit and latency decision more than a money one. Batched is the
-      default; if per-claim measurably improves agreement in Phase 5, that is a
-      finding worth the spend — but it needs the calibration number to justify it
-- [ ] Verify each claim against the structured input: supported / contradicted /
-      unsupported / review-sourced
-- [ ] Review-sourced = traceable only to a guest review. Reported as its own
-      number, never folded into precision. An owner republishing a guest's
-      opinion as a first-party marketing claim is a distinct risk, and averaging
-      it away is the exact failure this eval exists to prevent
-- [ ] Aggregate precision + recall over the first three categories
+- [x] Claim extraction from generated copy → atomic claims
+- [x] Verify shape decided: **one call per claim**, not batched. The batched
+      path was removed rather than kept as a dead alternative; the reasoning
+      is written up in the README
+- [x] Verify each claim: supported / contradicted / unsupported / review-sourced
+- [x] Review-sourced reported separately, never folded into precision
+- [x] Aggregate precision + recall over the first three categories
 
-**Acceptance:** on a fixture with a planted hallucinated amenity, the scorer
-marks that claim unsupported and precision drops. On a fixture whose only
-support is a review, the claim lands in the fourth bucket and precision does not
-move. Re-run hits Inspect's cache, no second API call.
+**Acceptance met**, scored against the frozen Phase 2 generations rather than a
+fresh run — generations byte-identical, only judging paid for. Results in the
+README. Cache reuse remains unproven (see Phase 0).
 
 ---
 
 ## Phase 5 — Judge calibration (HUMAN WORK)
 
-- [ ] `TODO(human)`: hand-label ~20 generations from the frozen Phase 2 run. Not
+- [x] `TODO(human)`: 18 claims hand-labelled from the frozen Phase 2 run. Not
       agent-generated (AGENTS §5)
 - [ ] That run is `gen_v0`'s deliberately-bad output, and that is correct — you
       are calibrating the judge, not the generator. Obvious hallucinations are
@@ -179,9 +170,10 @@ move. Re-run hits Inspect's cache, no second API call.
       "good" run to label. Label v0 once and never re-label against a later run:
       the labels join by hash of the generation text (AGENTS §6), so re-labelling
       orphans them and silently invalidates every agreement number
-- [ ] Judge vs hand labels → agreement (bias)
-- [ ] Judge vs itself across repeats → self-consistency (variance)
-- [ ] One paragraph: what the judge is and isn't trustworthy for
+- [x] Judge vs hand labels → agreement (bias): 0.94, kappa 0.91, n=18
+- [x] Judge vs itself across repeats → self-consistency: 0.94 over 3 passes
+- [x] What the judge is and isn't trustworthy for — written up in the README,
+      with a controlled probe isolating the inference blind spot
 
 **Acceptance:** both numbers reported together with a plain statement of what
 stays unmeasured.
