@@ -50,6 +50,13 @@ executing anything.
 The mock client in the test suite exists so tests run without a key. It never
 produces a log that ships.
 
+One caveat on the logs' own metadata: Inspect stamps each log with the git commit
+it ran from, and these record `dirty: true` — the tree had uncommitted changes at
+the time, and the source was later repackaged into `domain/`, `eval/` and
+`analysis/`. So that stamp does not identify the current module paths. It is
+informational only; nothing reads it, and the results, the labels and the
+calibration all reproduce from what is committed here.
+
 ---
 
 ## Approach
@@ -235,16 +242,21 @@ all four sections are present. It is now its own check, and v1 scores 1.00 on it
 
 ## Cost
 
-`cost.py` models spend before it is spent, with an injected token counter so
-tests stay offline. Measured against the fixtures: one epoch through generate →
-extract → verify is ~$0.29 per-claim. The whole project to date is under $2.
+`analysis/cost.py` models spend before it is spent, with an injected token
+counter so tests stay offline. Measured against the fixtures, one epoch through
+generate → extract → verify costs about $0.29 with per-claim verification.
+
+Everything to date came to roughly **$5**: $3.16 recorded in the committed logs,
+plus about 400 further calls from the calibration, variance and probe scripts,
+which spend money without recording it. That gap is itself a finding — the
+artefact should carry its own evidence of cost, and here it only carries part.
 
 The conclusion that matters: **cost is not the binding constraint** — wall-clock
 and rate limits are, so model choice is a quality decision.
 
 ## How the tests are checked
 
-188 tests, no network, no key. Coverage is 97%. But coverage only proves a line
+221 tests, no network, no key. Coverage is 97%. But coverage only proves a line
 ran, so the suite is also graded by **mutation testing** — mutate the source,
 rerun the tests, and see what nobody notices:
 
@@ -271,6 +283,48 @@ depth and broke whenever the package was copied.
 - **Observability infrastructure** — Inspect owns logging, caching and replay. A
   parallel run log would be a defect.
 - **Image analysis** — `image_urls` is in the schema and deliberately unused.
+
+## What I'd do next
+
+- **Fix the attribution rule that measurably didn't work.** `review_sourced_rate`
+  went 0.13 → 0.14. The rule asked the model to *attribute* guest opinions; the
+  metric counts claims whose only support is a review. Attribution doesn't change
+  provenance, so it could never have moved. Either the rule says "don't use review
+  content", or the metric splits review-sourced into asserted versus attributed —
+  they mean different things and only the first is the laundering risk.
+- **Test injection placements beyond the HTML comment.** Zero in eight bounds the
+  rate at 31%; variety of attack beats repetition of one.
+- **Add a persuasiveness or owner-edit-rate signal.** The current metrics are
+  near-saturated at v1 and none of them scores whether 159 words sells better than
+  325. Owner edit-rate is the honest online proxy: copy an owner rewrites before
+  publishing failed, whatever the offline score said.
+- **Verify Inspect's cache is actually reused.** Caching is opt-in and was never
+  enabled, so "re-runs are cheap" is assumed, not measured.
+
+## Extending to production
+
+The package is split to make this concrete: `domain/` is the part that could
+ship, `eval/` and `analysis/` are the harness that measures it. A test enforces
+that `domain/` never imports the harness.
+
+What would have to change:
+
+- **The hardcoded lists become data.** Eight amenity mappings, sixteen
+  superlatives, thirteen steering phrases, nineteen unsupportable-claim patterns —
+  all English literals in source. A multi-market platform needs these versioned,
+  per-locale, and owned by whoever owns the content policy, not the code.
+- **Someone has to decide.** Nothing here gates publication; every metric is
+  reported and none blocks. Production needs a threshold policy, an owner for it,
+  and a route for an owner whose legitimate listing gets blocked.
+- **Throughput becomes the constraint.** Per-claim verification is ~20 judge calls
+  per property; 475 calls took eight minutes here, rate-limited. At ten thousand
+  listings the design changes — batch API, a deterministic pre-filter, or caching
+  keyed on generation hash.
+- **Split the judge from the generator.** Both are the same model here, so
+  self-preference bias is plausible and entirely unmeasured. Calibration would
+  need re-running against a different judge.
+
+`analysis/` never ships. It measures the measurer, and belongs in CI.
 
 ## How AI was used
 
