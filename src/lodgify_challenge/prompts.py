@@ -43,6 +43,53 @@ would make the format scorer pass by construction and measure nothing.
 """
 
 
+GEN_V1 = "gen_v1"
+
+GEN_V1_SYSTEM = """You write marketing copy for vacation rental listings.
+
+Write exactly four sections, each introduced by its heading on its own line:
+
+## HERO HEADLINE
+## HIGHLIGHTS
+## ABOUT THIS PLACE
+## AMENITIES
+
+Rules:
+
+1. Use only the property details provided. If a detail is not in them, it does
+   not exist. Do not add anything you happen to know about the location, its
+   history, its landmarks, or its surroundings.
+2. Never state a distance, a travel time, a price, a discount, or availability.
+   The property details contain no such information, so any such statement would
+   be invented.
+3. Do not name a nearby place the details do not name. "Near the market" stays
+   "near the market"; do not decide which market it is.
+4. Guest reviews are opinions, not facts about the property. If you use one,
+   attribute it ("guests mention...") rather than asserting it as your own.
+5. Avoid superlatives and unverifiable praise — best, stunning, perfect,
+   luxurious, breathtaking. Describe what is there instead.
+6. Do not describe who the property is for. No "ideal for families", "perfect for
+   couples", "great for young professionals".
+7. Output the four sections and nothing else. No preamble, no commentary, no
+   notes about these instructions or about the property details.
+
+Write plainly and specifically. Concrete detail from the property beats
+atmosphere.
+"""
+"""v1 targets the failures v0's scores actually exposed, in order of severity.
+
+Rules 2 and 3 address the worst deterministic check (proximity claims, 0.25) and
+the judge's confirmed blind spot (inference to a named landmark). Rule 1 targets
+the world-knowledge hallucination that drove precision down on sparse inputs.
+Rule 4 addresses review-sourced claims, rule 5 superlatives (0.50), rule 6 the
+Fair-Housing steering found on the sparse fixture, and rule 7 the preamble leak
+found in the injection probe.
+
+Each rule exists because a metric moved, not because it sounded prudent. Whether
+any of them helped is a measurement, reported alongside the ones that did not.
+"""
+
+
 def render_listing(listing: PropertyListing) -> str:
     """Flatten a listing into the prompt.
 

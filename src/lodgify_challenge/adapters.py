@@ -21,6 +21,9 @@ AMENITY_LABELS: dict[str, str] = {
     "AirConditioning": "air conditioning",
     "BathroomAndLaundry": "bathroom and laundry facilities",
     "FreeParkingOnPremises": "free parking on the premises",
+    "Heating": "heating",
+    "KitchenAndDining": "kitchen and dining facilities",
+    "SwimmingPool": "swimming pool",
 }
 """Input data, not generator invention — and the grounding scorer's ground truth.
 

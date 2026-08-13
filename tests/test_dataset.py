@@ -1,17 +1,21 @@
-from lodgify_challenge.dataset import ADVERSARIAL, property_samples
+from lodgify_challenge.dataset import ADVERSARIAL, FIXTURE_DIR, property_samples
 from lodgify_challenge.prompts import render_listing
 from lodgify_challenge.adapters import listing_from_json
 
 
 def test_every_fixture_becomes_a_sample() -> None:
     samples = property_samples()
-    assert len(samples) == 4
-    assert {s.id for s in samples} == {
-        "villa_sitges",
-        "apartment_porto_sparse",
-        "cottage_injection",
-        "absurd_values",
-    }
+    ids = {s.id for s in samples}
+    assert ADVERSARIAL <= ids
+    assert "villa_sitges" in ids
+    assert len(samples) == len(list(FIXTURE_DIR.glob("*.json")))
+
+
+def test_the_realistic_slice_is_not_a_single_property() -> None:
+    """It was, for a while: three adversarial fixtures against one realistic one
+    meant 'realistic performance' rested on a single anecdote."""
+    realistic = [s for s in property_samples() if s.metadata["slice"] == "realistic"]
+    assert len(realistic) > 1
 
 
 def test_slice_is_recorded_at_build_time() -> None:

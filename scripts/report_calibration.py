@@ -20,6 +20,15 @@ LABELS = REPO_ROOT / "data" / "gold_labels.jsonl"
 
 
 def judged_verdicts() -> dict[tuple[str, str], Verdict]:
+    """Verdicts from the run the labels were written against.
+
+    Deliberately not "the latest v0 run". Labels join by hash of the generation
+    text, so a later run over a different fixture set orphans all of them —
+    which the hash join makes loud, but which is avoidable by pinning here. Any
+    v0 run containing a labelled generation is the right one.
+    """
+    labelled_hashes = {label.generation_sha256 for label in load_labels(LABELS)}
+
     runs = [
         read_eval_log(i)
         for i in sorted(list_eval_logs(str(REPO_ROOT / "logs")), key=lambda i: i.name)
@@ -28,8 +37,22 @@ def judged_verdicts() -> dict[tuple[str, str], Verdict]:
     if not matching:
         raise SystemExit("No gen_v0 run in logs/.")
 
+    def covers(run) -> int:
+        return sum(
+            1
+            for s in run.samples
+            if generation_hash(s.output.completion) in labelled_hashes
+        )
+
+    best = max(matching, key=covers)
+    if not covers(best):
+        raise SystemExit(
+            "No run in logs/ contains the labelled generations. The labels were "
+            "written against a run that is no longer present."
+        )
+
     out: dict[tuple[str, str], Verdict] = {}
-    for sample in matching[-1].samples:
+    for sample in best.samples:
         grounding = sample.scores.get("grounding")
         if grounding is None:
             continue

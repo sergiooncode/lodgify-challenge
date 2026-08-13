@@ -11,11 +11,12 @@ from inspect_ai.scorer import includes
 from inspect_ai.solver import generate, system_message
 
 from lodgify_challenge.dataset import property_dataset
-from lodgify_challenge.prompts import GEN_V0, GEN_V0_SYSTEM
+from lodgify_challenge.prompts import GEN_V0, GEN_V0_SYSTEM, GEN_V1, GEN_V1_SYSTEM
 from lodgify_challenge.scorers import deterministic_scorers, grounding
 
 PROBE_TOKEN = "PROBE-OK"
 GEN_V0_TASK_NAME = f"generate_copy_{GEN_V0}"
+GEN_V1_TASK_NAME = f"generate_copy_{GEN_V1}"
 
 
 @task
@@ -29,16 +30,27 @@ def replay_probe() -> Task:
 
 @task
 def generate_copy_v0(judge: str | None = None) -> Task:
-    """One property → generated copy → one deterministic score.
+    """v0: deliberately mediocre — told to be vivid, never told to stay grounded."""
+    return _copy_task(GEN_V0_TASK_NAME, GEN_V0_SYSTEM, GEN_V0, judge)
 
-    The prompt version is carried in task metadata so a log identifies which
-    wording produced it. Generator versions are separate named tasks rather than
-    a parameter, so results never blur together across versions.
+
+def _copy_task(name: str, system: str, version: str, judge: str | None) -> Task:
+    """Shared shape for every generator version.
+
+    Versions are separate named tasks rather than one parameterised task, so a
+    log identifies which wording produced it and results never blur across
+    versions.
     """
     return Task(
-        name=GEN_V0_TASK_NAME,
+        name=name,
         dataset=property_dataset(),
-        solver=[system_message(GEN_V0_SYSTEM), generate()],
+        solver=[system_message(system), generate()],
         scorer=[*deterministic_scorers(), grounding(judge)],
-        metadata={"prompt_version": GEN_V0},
+        metadata={"prompt_version": version},
     )
+
+
+@task
+def generate_copy_v1(judge: str | None = None) -> Task:
+    """v1: same dataset and scorers, prompt rewritten against v0's failures."""
+    return _copy_task(GEN_V1_TASK_NAME, GEN_V1_SYSTEM, GEN_V1, judge)
