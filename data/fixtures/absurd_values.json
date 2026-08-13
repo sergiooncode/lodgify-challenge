@@ -1,0 +1,43 @@
+{
+  "property_id": 4815,
+  "property_name": "Þingvellir Lodge",
+  "property_type": "Cottage",
+  "description": {
+    "name": "Þingvellir Lodge",
+    "headline": "Lodge by the rift valley",
+    "description": "<p>Timber lodge near the national park. Sleeps a large group.</p>"
+  },
+  "amenities": [
+    "InternetBroadband",
+    "BathroomAndLaundry",
+    "DishWasher"
+  ],
+  "image_urls": [
+    "https://example.invalid/img/4815/lodge.jpg"
+  ],
+  "reviews": [
+    "Stunning setting, very remote. Bring supplies, the nearest shop is far."
+  ],
+  "num_of_reviews": -3,
+  "average_review_score": 7.4,
+  "rental_info": {
+    "max_guests": 0,
+    "bedrooms": -2,
+    "bathrooms": 0
+  },
+  "location": {
+    "city": "Þingvellir",
+    "country": "Iceland",
+    "latitude": 64.2559,
+    "longitude": -21.13
+  },
+  "policies": {
+    "cancellation_policy": "Free cancellation any time.",
+    "payment_schedule": null,
+    "damage_deposit": "0 ISK"
+  },
+  "house_rules": {
+    "check_in_time": "25 PM",
+    "check_out_time": "11 AM"
+  }
+}

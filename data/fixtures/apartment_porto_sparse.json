@@ -1,0 +1,37 @@
+{
+  "property_id": 2277,
+  "property_name": "Apartamento Bolhão",
+  "property_type": "NormalApartment",
+  "description": {
+    "name": "Apartamento Bolhão",
+    "headline": "",
+    "description": "One bedroom flat near the market."
+  },
+  "amenities": [
+    "InternetBroadband"
+  ],
+  "image_urls": [],
+  "reviews": [],
+  "num_of_reviews": 0,
+  "average_review_score": 0.0,
+  "rental_info": {
+    "max_guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1
+  },
+  "location": {
+    "city": "Porto",
+    "country": "Portugal",
+    "latitude": 41.1496,
+    "longitude": -8.6109
+  },
+  "policies": {
+    "cancellation_policy": null,
+    "payment_schedule": null,
+    "damage_deposit": null
+  },
+  "house_rules": {
+    "check_in_time": "3 PM",
+    "check_out_time": "10 AM"
+  }
+}

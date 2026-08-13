@@ -1,0 +1,477 @@
+{
+  "passes": 3,
+  "claims": 94,
+  "stable_share": 0.9361702127659575,
+  "per_claim": {
+    "0a5eec016a40::Guests have described the setting as 'stunning'": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "0a5eec016a40::Guests have described the setting as 'very remote'": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "0a5eec016a40::The landscape features dramatic fissures": [
+      "supported",
+      "supported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The landscape features glacial waters": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The location is off-the-beaten-path in Iceland": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "0a5eec016a40::The lodge can serve as a basecamp for chasing the Northern Lights": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge can serve as a basecamp for tracing the Golden Circle": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge has a dishwasher": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge has a flexible cancellation policy": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge has a full bathroom": [
+      "contradicted",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge has broadband internet": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge has laundry facilities": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge is a timber lodge": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge is built to comfortably host a large group": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge is located beside \u00deingvellir National Park": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge is located where two tectonic plates meet": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge is near lava fields": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge is near waterfalls": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge is spacious": [
+      "supported",
+      "supported",
+      "contradicted"
+    ],
+    "0a5eec016a40::The lodge offers free cancellation at any time": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::The lodge offers total privacy": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::The lodge requires no damage deposit": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "0a5eec016a40::\u00deingvellir National Park is Iceland's historic rift valley": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "0a5eec016a40::\u00deingvellir is a UNESCO World Heritage site": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "88bc54ab4d22::A 50% deposit is required at booking": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::Check-in is from 4 PM": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::Check-out is by 11 AM": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::Free cancellation is available up to 14 days before arrival": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::It is a five-minute walk downhill to the beach": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "88bc54ab4d22::Parking is free on the premises": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::Past guests have received a welcome bottle of local wine": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "88bc54ab4d22::The balance is due 30 days before arrival": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The bathrooms have full laundry facilities": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "88bc54ab4d22::The bedrooms are air-conditioned": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "88bc54ab4d22::The damage deposit is returned within 7 days of checkout": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The kitchen has a dishwasher": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The living area flows directly onto the terrace": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The living area is open-plan": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "88bc54ab4d22::The living room's doors open to the outside": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has a 4.72 average rating": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has a fully equipped kitchen": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has a south-facing terrace": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has broadband internet": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has four bedrooms": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property has three bathrooms": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The property is on a quiet street": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "88bc54ab4d22::The property sleeps up to 8 guests": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The rating is based on 87 stays": [
+      "unsupported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The terrace has sweeping/sea views": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "88bc54ab4d22::The terrace looks out over rooftops toward the Mediterranean": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "88bc54ab4d22::The terrace receives sun from midday on": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The villa is located on a hillside above Sitges": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::The walk back from the beach is uphill/a climb": [
+      "review_sourced",
+      "review_sourced",
+      "review_sourced"
+    ],
+    "88bc54ab4d22::There are 2 parking spaces": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::There is a refundable damage deposit of \u20ac500": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "88bc54ab4d22::There is on-site parking for two cars": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::Check-in time is 3 PM": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::Port wine cellars across the Douro are accessible from the apartment": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The Bolh\u00e3o Market is just moments away from the apartment": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The Bolh\u00e3o Market offers fresh produce, flowers, and local cheeses": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The Bolh\u00e3o Market was recently restored to its Belle \u00c9poque style": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The apartment has a private bathroom": [
+      "supported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The apartment has broadband internet": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The apartment includes broadband internet": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The apartment is called Apartamento Bolh\u00e3o": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The apartment is ideal for two travelers": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The apartment is located in Porto's historic Bolh\u00e3o district": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The apartment is located in the heart of Porto": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The apartment is suited for couples or solo travelers": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The apartment offers a calm, comfortable space to rest": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The apartment sleeps 2": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The property has easy access to Porto's caf\u00e9s, shops, and cobblestone streets": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The property is a one-bedroom apartment": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "9c8da18af72c::The property is located steps from the historic Mercado do Bolh\u00e3o": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The riverside Ribeira district is accessible from the apartment": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "9c8da18af72c::The surrounding streets are lined with azulejo-tiled buildings": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Walking routes practically start from the cottage's gate": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Wren Cottage has 14 reviews": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has a private walled garden": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has a rating of 4.5 stars": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has a wood burner": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has broadband internet": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has laundry facilities": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has one bathroom": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage has thick walls": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Wren Cottage has two bedrooms": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage is a short stroll from Haworth's cobbled streets": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Wren Cottage is a short stroll from Haworth's literary history sites": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Wren Cottage is a short stroll from cosy pubs in Haworth": [
+      "unsupported",
+      "unsupported",
+      "unsupported"
+    ],
+    "d1a89970ed95::Wren Cottage is a stone cottage": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage is built from solid local stone": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage is close to walking routes onto the moor": [
+      "unsupported",
+      "unsupported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage is located on the edge of Haworth Moor": [
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "d1a89970ed95::Wren Cottage sleeps 4": [
+      "supported",
+      "supported",
+      "supported"
+    ]
+  }
+}

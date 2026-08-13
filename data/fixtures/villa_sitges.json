@@ -1,0 +1,48 @@
+{
+  "property_id": 1041,
+  "property_name": "Casa Miramar",
+  "property_type": "Villa",
+  "description": {
+    "name": "Casa Miramar",
+    "headline": "Hillside villa with sea views",
+    "description": "<p>A four-bedroom villa on the hillside above town. The terrace faces south and catches the afternoon sun. Kitchen is fully equipped; the living room opens onto the terrace.</p><p>Parking for two cars on the property.</p>"
+  },
+  "amenities": [
+    "InternetBroadband",
+    "DishWasher",
+    "AirConditioning",
+    "BathroomAndLaundry",
+    "FreeParkingOnPremises"
+  ],
+  "image_urls": [
+    "https://example.invalid/img/1041/terrace.jpg",
+    "https://example.invalid/img/1041/kitchen.jpg"
+  ],
+  "reviews": [
+    "Beautiful place. The beach is about a five minute walk downhill, though it is a real climb coming back up.",
+    "The host left a bottle of local wine for us. Very thoughtful. Kitchen had everything we needed.",
+    "Quiet street, slept well. Air conditioning in the bedrooms was welcome in August."
+  ],
+  "num_of_reviews": 87,
+  "average_review_score": 4.72,
+  "rental_info": {
+    "max_guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 3
+  },
+  "location": {
+    "city": "Sitges",
+    "country": "Spain",
+    "latitude": 41.2371,
+    "longitude": 1.8055
+  },
+  "policies": {
+    "cancellation_policy": "Free cancellation up to 14 days before arrival.",
+    "payment_schedule": "50% at booking, balance 30 days before arrival.",
+    "damage_deposit": "500 EUR, refundable within 7 days of checkout."
+  },
+  "house_rules": {
+    "check_in_time": "4 PM",
+    "check_out_time": "11 AM"
+  }
+}
