@@ -12,9 +12,6 @@ dependencies = [
     "inspect-ai>=0.3.258",
 ]
 
-[project.scripts]
-lodgify-challenge = "lodgify_challenge:main"
-
 [build-system]
 requires = ["uv_build>=0.10.10,<0.11.0"]
 build-backend = "uv_build"
@@ -22,5 +19,14 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
+    "mutmut>=3.7.0",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["mutants", ".venv", "logs"]
+
+[tool.mutmut]
+source_paths = ["src/lodgify_challenge"]
